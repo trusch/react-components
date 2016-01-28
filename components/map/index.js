@@ -6,7 +6,7 @@
 
 import React, {Component} from 'react';
 
-import './maps.styl';
+import './map.styl';
 
 export default class Map extends Component {
   static propTypes = {
@@ -34,8 +34,8 @@ export default class Map extends Component {
         map = new google.maps.Map(ref, mapOptions);
         map.setCenter(res[0].geometry.location);
         var marker = new google.maps.Marker({
-            map: map,
-            position: res[0].geometry.location
+          map: map,
+          position: res[0].geometry.location
         });
       }
     });
@@ -48,7 +48,5 @@ export default class Map extends Component {
         </div>
       </div>
     );
-    
   }
-
 }

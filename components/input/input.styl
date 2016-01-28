@@ -1,0 +1,50 @@
+@import '../../variables/variables.styl'
+@import '../../app/app.styl'
+
+input
+  background-color $bg-color-default
+  border-radius $default-border-radius
+  border 1px solid $primary-crystal
+  color $primary-crystal
+  height $input-height
+  font-size $input-font-size
+  margin-bottom $line-height
+  padding 0 $input-horizontal-padding
+  width 100%
+
+  &:focus
+    outline 0
+
+  &.disabled
+    background-color $primary-red
+    border 1px solid $primary-red
+    opacity 0.15
+
+    &::-webkit-input-placeholder
+        color $primary-white
+
+    &::-moz-placeholder
+        color $primary-white
+
+    &:-ms-input-placeholder
+        color $primary-white
+
+    input:-moz-placeholder
+        color $primary-white
+
+  &.error
+    background-color transparent
+    border 1px solid $primary-red
+    color $primary-white
+
+::-webkit-input-placeholder
+    color $primary-crystal
+
+::-moz-placeholder
+    color $primary-crystal
+
+:-ms-input-placeholder
+    color $primary-crystal
+
+input:-moz-placeholder
+    color $primary-crystal

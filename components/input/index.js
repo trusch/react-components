@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Grid, Row, Col} from 'react-bootstrap';
+import './input.styl';
 
 export default class Input extends Component {
 
@@ -23,11 +25,7 @@ export default class Input extends Component {
 
   render() {
     return (
-        <counter>
-            <span > Count: {this.state.count} </span>
-            <button onClick={this.increment.bind(this)}>inc</button>
-            <button onClick={this.decrement.bind(this)}>dec</button>
-       </counter>
+      <input id="" name="" type="" placeholder="placeholder" className="disabled"></input>
     );
   }
 }
