@@ -1,0 +1,175 @@
+@import '../../variables/variables.styl'
+
+header
+    margin $navigation-padding 0
+    position relative
+
+    .burger-menu
+        border 0
+        padding 0
+        position absolute
+        height $burger-button-square
+        top -5px
+        right 0
+        width $burger-button-square
+
+        .bar
+            background-color $primary-white
+            display block
+            height $burger-bar-height
+            position absolute
+            left 0
+            width 100%
+
+            &.bar-1
+                top "calc(26% - %s / 2)" % $burger-bar-height
+
+            &.bar-2,
+            &.bar-3
+                top "calc(50% - %s / 2)" % $burger-bar-height
+
+            &.bar-4
+                top "calc(76% - %s / 2)" % $burger-bar-height
+
+.main-navi
+    background-color $bg-color-default
+    font-size 18px
+    padding 0
+    position absolute
+    right - $main-menu-width
+    width $main-menu-width
+    z-index 100
+
+    &.menu-open
+        right 0
+
+    li
+
+        a,
+        button
+            color $primary-crystal
+            text-decoration none
+
+            &:hover
+                color $dark-crystal
+
+            &:active,
+            &:focus
+                color $primary-red
+
+        .subnavi
+            display none
+
+            li
+                position relative
+
+                a
+                    padding-left $navigation-padding
+
+                    span
+                        display block
+                        margin 0
+
+                    &:hover
+
+                        .image-box
+                            border 1px solid $primary-crystal
+
+                    &:focus,
+                    &:active
+
+                        .image-box
+                            border 1px solid $primary-red
+
+        a
+            display block
+            padding "calc(%s / 2)" % $navigation-padding
+            padding-left 0
+
+        &.submenu-open
+
+            .subnavi
+                display block
+
+.news-msg
+    background-color $primary-red
+    border-radius 50%
+    box-shadow 0 0 4px 0 rgba(0, 0, 0, 0.5)
+    color: $primary-white
+    text-align center
+    font-size 12px
+    line-height $news-msg-square
+    padding 0 5px
+    width $news-msg-square
+    position absolute
+    right 20px
+    top 8px
+    z-index 102
+    display block
+
+.logout-button
+    float none
+
+    .logout
+        border 0
+        color $primary-crystal
+        height 42px
+        padding-right 0
+
+@media screen and (min-width: $screen-md-min)
+
+    .news-msg
+        top 30px
+
+    .logout-button
+        float right
+
+    .main-navi
+        background-color $bg-color-default
+        border 0
+
+        position relative
+        width 100%
+        z-index 100
+
+        li
+            display inline-block
+
+            &.submenu-open
+
+                & > a
+                    color $primary-red
+
+            &.logout-item
+                float right
+
+            a
+                border 0
+
+            .subnavi
+                background-color $bg-color-default
+                padding-bottom "calc(%s / 2)" % $navigation-padding
+                position absolute
+                display none
+                width 100%
+                z-index 101
+
+                li
+                    display inline-block
+
+                    a
+                        padding "calc(%s / 2)" % $navigation-padding
+                        padding-left 0
+
+                        span
+                            margin-bottom "calc(%s / 2)" % $navigation-padding
+
+                        .image-box
+                            background-color $primary-white
+                            border-radius $default-border-radius
+                            height 60px
+                            width 108px
+                            text-align center
+                            display table-cell
+                            padding 0
+                            vertical-align middle

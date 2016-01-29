@@ -1,0 +1,49 @@
+@import '../../variables/variables.styl'
+
+login
+    display block
+    margin 20% auto
+    width 300px
+
+    img
+        display block
+        height auto
+        margin-bottom $line-height
+        width 100%
+
+    input
+        background-color transparent
+        border 1px solid $primary-crystal
+        border-radius $default-border-radius
+        color $primary-white
+        font-size $input-font-size
+        margin-bottom $line-height
+        padding $input-padding
+        width 100%
+
+    button
+        background-color $primary-crystal
+        border 0
+        color $button-font-color
+        font-weight bold
+        height $button-height
+        margin-bottom $line-height
+        width 100%
+
+        &:hover
+            background-color lightness($primary-crystal, 50%)
+            color $button-font-color
+
+        &:active,
+        &:focus
+            color $button-font-color
+
+    .error-messsage
+        border 1px solid $primary-red
+        border-radius $default-border-radius
+        color $primary-white
+        display block
+        font-size 14px
+        line-height 24px
+        padding 10px
+        text-align center

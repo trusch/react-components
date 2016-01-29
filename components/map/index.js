@@ -26,6 +26,8 @@ export default class Map extends Component {
   createMap(location) {
     let map, ref = this.refs.map, mapOptions = {
       zoom: 12,
+      scrollwheel: this.props.scrollwheel || false,
+      draggable: this.props.draggable || false,
       center: new google.maps.LatLng(this.props.lat, this.props.lon)
     };
 
