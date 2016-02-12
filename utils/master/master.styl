@@ -1,0 +1,10 @@
+@import '../../variables/variables.styl'
+@import '../../app/app.styl'
+@import '../view/view.styl'
+
+master
+  display block
+  height "calc(100% - %s * 2)" % ($master-detail-padding)
+  overflow-y auto
+  float left
+  clearfix()

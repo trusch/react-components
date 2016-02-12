@@ -3,10 +3,19 @@ module.exports = [
     name: "Inventory",
     target: "inventory",
     children: [{
-        name: 'Test',
-        target: 'inventory/test',
-        icon: 'test-icon.png',
+        name: 'SWM',
+        target: 'inventory/swm',
+        icon: 'swm-icon.png',
         message: 12
+      },{
+        name: 'EON',
+        target: 'inventory/eon',
+        icon: 'eon-icon.png',
+        message: 10
+      },{
+        name: 'EDIS',
+        target: 'inventory/edis',
+        icon: 'edis-icon.png'
       }
     ]
   }, {

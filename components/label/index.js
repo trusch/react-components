@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
-import './textarea.styl';
+import './label.styl';
 
-export default class Textarea extends Component {
+export default class Label extends Component {
 
   constructor(props) {
     super(props);
@@ -24,15 +24,8 @@ export default class Textarea extends Component {
   }
 
   render() {
-    var className = '';
-    if(this.props.error) {
-      className += 'error ';
-    }
-    if(this.props.disabled) {
-      className += 'disabled ';
-    }
     return (
-      <textarea className={className} placeholder="Text eingeben"/>
+      <label htmlFor="male" className="">Male</label>
     );
   }
 }

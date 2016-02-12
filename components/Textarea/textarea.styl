@@ -1,48 +1,53 @@
 @import '../../variables/variables.styl'
-@import '../../app/app.styl'
 
-input[type="text"],
-input[type="password"]
-  background-color $bg-color-default
-  border-radius $default-border-radius
+textarea
+  background-color transparent
   border 1px solid $primary-crystal
   color $primary-crystal
-  height $input-height
-  font-size $input-font-size
+  fonz-size 14px
+  line-height $main-line-height
   margin-bottom $main-line-height
-  padding 0 $input-horizontal-padding
+  padding $input-horizontal-padding
+  resize none
+  height "calc(%s * 10)" % $main-line-height
   width 100%
 
   &::-webkit-input-placeholder
-      color $primary-crystal
+    color $primary-crystal
 
   &::-moz-placeholder
-      color $primary-crystal
+    color $primary-crystal
 
   &:-ms-input-placeholder
-      color $primary-crystal
+    color $primary-crystal
 
   input:-moz-placeholder
-      color $primary-crystal
+    color $primary-crystal
 
   &:focus
     outline 0
 
+  &:active,
+  &:focus
+    box-shadow 0 0 6px 0 $primary-crystal
+    color $font-color-active
+    outline 0
+
   &.disabled
     background-color rgba($primary-red, .15)
-    border 1px solid rgba($primary-red, .0)
+    border 1px solid rgba($primary-red, .1)
 
     &::-webkit-input-placeholder
-        color $primary-white
+      color $primary-white
 
     &::-moz-placeholder
-        color $primary-white
+      color $primary-white
 
     &:-ms-input-placeholder
-        color $primary-white
+      color $primary-white
 
     input:-moz-placeholder
-        color $primary-white
+      color $primary-white
 
   &.error
     background-color transparent

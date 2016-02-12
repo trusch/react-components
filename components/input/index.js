@@ -24,8 +24,23 @@ export default class Input extends Component {
   }
 
   render() {
+    var className = '';
+    var typeName = '';
+    if(this.props.error) {
+      className += 'error ';
+    }
+    if(this.props.disabled) {
+      className += 'disabled ';
+    }
+
+    if(this.props.type === 'text') {
+      typeName += 'text';
+    } else if(this.props.type === 'password') {
+      typeName += 'password';
+    }
+
     return (
-      <input id="" name="" type="" placeholder="placeholder" className="disabled"></input>
+      <input type={typeName} id="" name="" placeholder="placeholder" className={className}></input>
     );
   }
 }

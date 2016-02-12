@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import Image from '../../components/image/index.js';
-import Burger from '../../components/burger/index.js';
-import { Col, Grid, Row } from 'react-bootstrap';
+import { Grid, Row, Col }   from '../../components/grid';
+import { Link }             from 'react-router';
+import Image                from '../../components/image/index.js';
+import Burger               from '../../components/burger/index.js';
 
-import auth from '../../factory/auth';
+import auth                 from '../../factory/auth';
 
 import './navigation.styl';
 
@@ -81,7 +81,7 @@ export default class Navigation extends Component {
         submenu = this.getChildren(link);
       }
       links.push(<li className={classname} key={link.target}><a href="#">{link.name}</a>{submenu}</li>);
-    //<Link to={link.target}>{link.name}</Link><
+    //<Link to={link.target}>{link.name}</Link>
       if(i == navigation.length-1) {
         return links;
       }
@@ -89,24 +89,28 @@ export default class Navigation extends Component {
   }
 
   render() {
-    let navigation = this.props.navigation;
+    //let navigation = this.props.navigation;
     let classname  = this.state.open ? 'submenu-open' : '';
-    let links      = this.generateNavigation(navigation, classname);
+    //let links      = this.generateNavigation(navigation, classname);
     return (
       <Grid>
         <Row>
           <Col xs={12} sm={12} md={12} lg={12}>
-            <header>
-              <a href="#">
-                <Image src='src/images/energy-logo.svg'/>
-              </a>
-              <Burger />
-            </header>
-            <nav>
-              <ul className="main-navi menu-open">
-                {links}
-              </ul>
-            </nav>
+            <div className="navbar navbar-default navbar-fixed-top">
+              <header>
+                <a href="#">
+                  <Image src='src/images/energy-logo.svg'/>
+                </a>
+                <button className="logout-button" onClick={this.logout.bind(this)}>Logout</button>
+                {/*<Burger />*/}
+              </header>
+              <nav>
+                <ul className="main-navi menu-open">
+                  {/*links*/}
+                </ul>
+                <button className="logout-button" onClick={this.logout.bind(this)}>Logout</button>
+              </nav>
+            </div>
           </Col>
         </Row>
       </Grid>

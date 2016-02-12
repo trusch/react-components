@@ -1,0 +1,191 @@
+@import '../../variables/variables.styl'
+@import '../typography/typography.styl'
+
+.graph-container
+  margin-top $navigation-padding
+
+  canvas
+    width 100%!important
+
+  .chart-header
+    margin-bottom $navigation-padding
+
+    h2
+
+      & > span
+        color $dark-crystal
+        font-size 30px
+        font-weight bold
+
+        & + span
+          color $dark-crystal
+          font-size 0.875em
+          font-weight normal
+
+  .time-switcher
+    margin-top 10px
+    margin-bottom $navigation-padding
+    padding-bottom $navigation-padding
+    text-align right
+
+    button
+      background-color $dark-crystal
+      border 0
+      color $primary-crystal
+      width $icon-size
+      height auto
+      line-height $icon-size
+      padding 0
+
+    .counter
+      display inline-block
+      background-color $dark-crystal
+      color $primary-crystal
+      line-height $icon-size
+      padding 0 6px
+      margin 0 $navigation-padding
+
+  .chart-legend
+    margin-top $navigation-padding
+
+
+    ul
+
+      li
+        display inline
+        margin-right $navigation-padding
+        color $dark-crystal
+
+        .color-bullet
+          background-color pink
+          border-radius 5px
+          display inline-block
+          height $bullet-square
+          margin-right "calc(%s / 2)" % $navigation-padding
+          width $bullet-square
+
+          &.blue
+            background-color #25BDFF
+
+          &.red
+            background-color #FA4949
+
+          &.gold
+            background-color #FFB100
+
+          &.crystal
+            background-color #7894AF
+
+          &.green
+            background-color #02B653
+
+  .chart-switcher
+    margin-top $navigation-padding
+    text-align right
+    color $dark-crystal
+
+    p, .switch
+      display inline-block
+
+    p
+      line-height $chart-switcher-square
+      margin-right $navigation-padding
+
+
+.switch
+  position relative
+
+  input
+
+    &.cmn-toggle-round
+      background-color transparent
+      border 0
+      border-radius $chart-switcher-square
+      height $chart-switcher-square
+      margin 0
+      width $chart-switcher-width
+
+      & + label
+
+        &:before,
+        &:after
+          display block
+          position absolute
+          top 0
+          left 0
+          bottom 0
+          content ""
+          height $chart-switcher-square
+
+        &:after
+          width $chart-switcher-square
+
+        &:before
+          width $chart-switcher-width
+
+  input.cmn-toggle-round + label:before
+      right 1px
+      background-color #f1f1f1
+      border-radius $chart-switcher-square
+      transition background 0.4s
+
+  input.cmn-toggle-round + label:after
+      width $chart-switcher-square
+      background-color #fff
+      border-radius 100%
+      box-shadow 0 2px 5px rgba(0, 0, 0, 0.3)
+      transition margin 0.4s
+
+  input.cmn-toggle-round:checked + label:before
+      background-color #8ce196
+
+  input.cmn-toggle-round:checked + label:after
+      margin-left $chart-switcher-square
+
+
+.wrapper-dropdown
+    position relative
+    width 100px
+    padding 3px 10px
+    margin 0 0 0 30px
+    background #9bc7de
+    color #fff
+    outline none
+    cursor pointer
+    font-weight bold
+    float right
+
+    &:after
+      content ""
+      width 0
+      height 0
+      position absolute
+      right 16px
+      top 50%
+      margin-top -6px
+      border-width 6px 0 6px 6px
+      border-style solid
+      border-color transparent #FFFFFF
+
+    .dropdown
+      position absolute
+      top 100%
+      left 0
+      right 0
+      background #fff
+      font-weight normal
+      opacity 0
+      pointer-events none
+
+      li
+
+        a
+          display block
+          text-decoration none
+          color #9e9e9e
+          padding 10px 20px
+
+        &:hover
+
+          a
+            background #f3f8f8

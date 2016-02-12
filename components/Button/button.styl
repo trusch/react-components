@@ -1,0 +1,45 @@
+@import '../../variables/variables.styl'
+
+button
+  background-color $primary-crystal
+  border 0
+  color $button-font-color
+  fonz-size 14px
+  font-weight bold
+  height $button-height
+  margin-bottom $main-line-height
+  width 100%
+
+  &:hover
+    background-color lightness($primary-crystal, 50%)
+    color $button-font-color
+
+  &:active,
+  &:focus
+      box-shadow 0 0 6px 0 $primary-crystal
+      color $button-font-color
+      outline 0
+
+  &.disabled
+    background-color $disabled-gray
+    color lightness($disabled-gray, 50%)
+    cursor default
+
+  &.error
+    background-color $primary-red
+    color $primary-white
+
+a,
+button
+  & > span
+    color $primary-crystal
+
+  &:hover
+    & > span
+      color $dark-crystal
+
+  &:active,
+  &:focus,
+  &.selected
+    & > span
+      color $primary-red

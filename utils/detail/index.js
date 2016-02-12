@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
-import './button.styl';
+import { Grid, Row, Col } from '../../components/grid';
+import './detail.styl';
 
-export default class Button extends Component {
+export default class Detail extends Component {
 
   constructor(props) {
     super(props);
@@ -24,15 +24,10 @@ export default class Button extends Component {
   }
 
   render() {
-    var className = '';
-    if(this.props.error) {
-      className += 'error ';
-    }
-    if(this.props.disabled) {
-      className += 'disabled ';
-    }
     return (
-      <button className={className}>Button</button>
+      <detail>
+        {this.props.content}
+      </detail>
     );
   }
 }

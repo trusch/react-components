@@ -20,7 +20,7 @@ export default class LineGraph extends Component {
         {
           name: "series1",
           values: [ { x: 0, y: 20 }],
-          fill: "rgba(151,187,205,0.2)"
+          fill: "rgba(250,187,205,0.2)"
         },
         {
           name: "series2",

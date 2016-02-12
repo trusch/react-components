@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Grid, Row, Col} from 'react-bootstrap';
+import './radiobutton.styl';
 
 export default class Radiobutton extends Component {
 
@@ -22,12 +24,18 @@ export default class Radiobutton extends Component {
   }
 
   render() {
+    var className = '';
+    if(this.props.error) {
+      className += 'error ';
+    }
+    if(this.props.disabled) {
+      className += 'disabled ';
+    }
     return (
-        <counter>
-            <span > Count: {this.state.count} </span>
-            <button onClick={this.increment.bind(this)}>inc</button>
-            <button onClick={this.decrement.bind(this)}>dec</button>
-       </counter>
+      <div className="radiobutton-box disabled">
+        <input type="radio" id="" name="" className="checked"></input>
+        <label htmlFor=""><span className="round"></span>Radio Button 2</label>
+      </div>
     );
   }
 }

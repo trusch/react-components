@@ -1,8 +1,21 @@
 @import '../../variables/variables.styl'
 
+.navbar
+
+  nav
+    display none
+
+.navbar-default
+  background-color $bg-color-default
+  padding 0 15px
+
 header
     margin $navigation-padding 0
     position relative
+
+    .logout-button
+      height auto
+      padding 0
 
     .burger-menu
         border 0
@@ -35,10 +48,11 @@ header
     background-color $bg-color-default
     font-size 18px
     padding 0
-    position absolute
+    float left
     right - $main-menu-width
     width $main-menu-width
     z-index 100
+    width "calc(100% - %s)" % $logout-button-width
 
     &.menu-open
         right 0
@@ -92,29 +106,37 @@ header
                 display block
 
 .news-msg
-    background-color $primary-red
-    border-radius 50%
-    box-shadow 0 0 4px 0 rgba(0, 0, 0, 0.5)
-    color: $primary-white
-    text-align center
-    font-size 12px
-    line-height $news-msg-square
-    padding 0 5px
-    width $news-msg-square
-    position absolute
-    right 20px
-    top 8px
-    z-index 102
-    display block
+  background-color $primary-red
+  border-radius 50%
+  box-shadow 0 0 4px 0 rgba(0, 0, 0, 0.5)
+  color: $primary-white
+  text-align center
+  font-size 12px
+  line-height $news-msg-square
+  padding 0 5px
+  width $news-msg-square
+  position absolute
+  right 20px
+  top 8px
+  z-index 102
+  display block
 
 .logout-button
-    float none
+  background-color transparent
+  float right
+  border 0
+  color $primary-crystal
+  height 42px
+  padding-right 0
+  text-align right
+  width 70px
 
-    .logout
-        border 0
-        color $primary-crystal
-        height 42px
-        padding-right 0
+  &:hover
+    background-color transparent
+
+  &:active,
+  &:focus
+    box-shadow none
 
 @media screen and (min-width: $screen-md-min)
 
@@ -127,9 +149,7 @@ header
     .main-navi
         background-color $bg-color-default
         border 0
-
         position relative
-        width 100%
         z-index 100
 
         li

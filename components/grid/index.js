@@ -6,7 +6,7 @@ export class Grid extends React.Component {
   }
 
   render() {
-    let classes = "container";
+    let classes = "container-fluid";
 
     if(this.props.hiddenLG) {
       classes += " hidden-lg";

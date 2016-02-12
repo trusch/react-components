@@ -1,0 +1,64 @@
+@import '../../variables/variables.styl'
+
+.radiobutton-box {
+  margin-bottom $main-line-height
+
+  input[type="radio"] {
+    display:none;
+
+    & + label {
+      color $primary-crystal
+      width auto
+      display block
+
+      .round {
+        display inline-block
+        width 20px
+        height 20px
+        margin -1px 4px 0 0
+        vertical-align middle
+        cursor pointer
+        border-radius  50%
+        border 1px solid $primary-crystal
+      }
+    }
+
+    &:checked {
+
+      & + label {
+
+        .round {
+
+          &:after {
+            content ""
+            background-color $primary-red
+            width 12px
+            height 12px
+            display block
+            margin 3px 0 0 3px
+            border-radius  50%
+          }
+        }
+      }
+    }
+  }
+
+  &.disabled {
+
+    input[type="radio"] {
+      display:none;
+
+      & + label {
+        color $dark-crystal
+
+        .round {
+          border 1px solid $dark-crystal
+
+          &:after {
+            background-color rgba($primary-red, .15)
+          }
+        }
+      }
+    }
+  }
+}
