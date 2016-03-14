@@ -1,0 +1,55 @@
+@import '../../variables/variables.styl'
+
+$checkbox-size   = 20px
+$checkbox-margin = 10px
+
+.cb-label
+  position: relative
+  margin: $checkbox-margin
+  height: $checkbox-size
+  line-height: $checkbox-size
+  color: $font-color-text
+  cursor: pointer
+
+  &.disabled
+    opacity: 0.5
+
+  span
+    display: inline-block
+    height: $checkbox-size
+
+  input[type=checkbox].cb-input
+    position: relative
+    display: inline-block
+    width: $checkbox-size
+    margin: 0 $checkbox-margin 0 0
+    cursor: pointer
+    
+    &:before
+      content: ""
+      position: absolute
+      top: -2px
+      left: 0
+      z-index: 1
+      width: $checkbox-size
+      height: $checkbox-size
+      border: 1px solid $font-color-text
+      transition: all .3s ease-in-out
+      
+    &:checked 
+      &:before 
+        height: 1rem
+        border-style: none none solid solid
+        transform: rotate(-45deg)
+        border-color: $scale-active-color
+      
+    &:after 
+      content: ""
+      position: absolute
+      top: -2px
+      left: 0
+      width: $checkbox-size + 1px
+      height: $checkbox-size + 1px
+      background: $bg-color-default
+      cursor: pointer
+

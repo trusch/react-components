@@ -47,4 +47,16 @@ input[type="password"]
   &.error
     background-color transparent
     border 1px solid $primary-red
-    color $primary-white
+    color $primary-red
+
+    &::-webkit-input-placeholder
+        color $primary-red
+
+    &::-moz-placeholder
+        color $primary-red
+
+    &:-ms-input-placeholder
+        color $primary-red
+
+    input:-moz-placeholder
+        color $primary-red

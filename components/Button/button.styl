@@ -1,10 +1,11 @@
-@import '../../variables/variables.styl'
+@import '../../app/app.styl'
 
 button
-  background-color $primary-crystal
-  border 0
+  border 1px solid $primary-crystal
+  background-color transparent
+  border-radius $default-border-radius
   color $button-font-color
-  fonz-size 14px
+  font-size $button-font-size
   font-weight bold
   height $button-height
   margin-bottom $main-line-height
@@ -21,20 +22,42 @@ button
       outline 0
 
   &.disabled
-    background-color $disabled-gray
+    background-color transparent!important
     color lightness($disabled-gray, 50%)
-    cursor default
+    cursor not-allowed
+    opacity 0.3
 
   &.error
     background-color $primary-red
     color $primary-white
 
-a,
-button
+
+  span
+    margin: 0 10px
+    height: $button-height - 2px
+
+    &.glyphicon
+      &:before
+        position: relative
+        top: 26%
+
+    &:not(.glyphicon)
+      display: inline-block
+      position: relative
+      vertical-align: top
+
+      img
+        position: relative
+        top: 50%
+        transform: translateY(-50%)
+  
+  .text
+    line-height $button-height - 2px
+
   & > span
     color $primary-crystal
 
-  &:hover
+  &:hover:not(.disabled)
     & > span
       color $dark-crystal
 

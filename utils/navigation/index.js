@@ -11,7 +11,7 @@ import './navigation.styl';
 export default class Navigation extends Component {
   constructor(props){
     super(props);
-    console.log(this.props);
+    //console.log(this.props);
     this.state = {
       selected: {}
     };
@@ -23,7 +23,7 @@ export default class Navigation extends Component {
   }
 
   handleSelect(evt,selectedKey){
-    console.log(evt,selectedKey);
+    //console.log(evt,selectedKey);
     let newSelectedState = this.state.selected;
     for(let key in newSelectedState){
       newSelectedState[key] = false;
@@ -88,6 +88,14 @@ export default class Navigation extends Component {
     }
   }
 
+  openMenu() {
+    this.props.toggleMenu();
+  }
+
+  goBack() {
+    this.props.goHome();
+  }
+
   render() {
     //let navigation = this.props.navigation;
     let classname  = this.state.open ? 'submenu-open' : '';
@@ -98,8 +106,8 @@ export default class Navigation extends Component {
           <Col xs={12} sm={12} md={12} lg={12}>
             <div className="navbar navbar-default navbar-fixed-top">
               <header>
-                <a href="#">
-                  <Image src='src/images/energy-logo.svg'/>
+                <a href="#" onClick={this.goBack.bind(this)}>
+                  <Image src='src/images/energy-logo-new.svg'/>
                 </a>
                 <button className="logout-button" onClick={this.logout.bind(this)}>Logout</button>
                 {/*<Burger />*/}

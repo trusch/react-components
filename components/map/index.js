@@ -2,7 +2,7 @@
 //    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 // in your body
 
-// Props requiered are latitude(lat), longitude(lon) and location
+// Props requiered are location
 
 import React, {Component} from 'react';
 
@@ -30,7 +30,8 @@ export default class Map extends Component {
       draggable  : this.props.draggable   || false,
       scrollwheel: this.props.scrollwheel || false,
       center     : new google.maps.LatLng(this.props.lat, this.props.lon),
-      styles     : mapStyle.ultraLightAndFlat
+      styles     : mapStyle.nightMode,
+      disableDefaultUI: true
     };
 
     new google.maps.Geocoder().geocode({address: location}, function(res, status) {

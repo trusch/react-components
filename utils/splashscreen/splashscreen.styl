@@ -1,0 +1,22 @@
+@import '../../variables/variables.styl'
+@import '../../app/app.styl'
+
+.splash-screen
+
+  &.loading
+    position: absolute
+    top 0
+    left 0
+    width 100vw
+    height 100vh
+    color white
+    overflow hidden
+    z-index 66666
+    background $bg-color-default
+    background-image url('../../images/energy-logo-new.svg')
+    background-position center center
+    background-repeat no-repeat
+    background-size 50%
+
+  .waitloader
+    margin-top 60vh

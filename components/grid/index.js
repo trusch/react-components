@@ -8,6 +8,12 @@ export class Grid extends React.Component {
   render() {
     let classes = "container-fluid";
 
+    if(this.props.className) classes += this.props.className;
+
+    if(this.props.classes) {
+      classes += " "+this.props.classes;
+    }
+
     if(this.props.hiddenLG) {
       classes += " hidden-lg";
     }
@@ -37,6 +43,12 @@ export class Row extends React.Component {
   render() {
     let classes = "row";
 
+    if(this.props.className) classes += this.props.className;
+
+    if(this.props.classes) {
+      classes += " "+this.props.classes;
+    }
+
     if(this.props.hiddenLG) {
       classes += " hidden-lg";
     }
@@ -65,6 +77,12 @@ export class Col extends React.Component {
 
   render() {
     let classes = "";
+
+    if(this.props.className) classes += this.props.className;
+
+    if(this.props.classes) {
+      classes += " "+this.props.classes;
+    }
 
     if(this.props.lg) {
       classes += " col-lg-"+(this.props.lg);

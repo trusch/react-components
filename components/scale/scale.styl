@@ -1,0 +1,216 @@
+@import '../../variables/variables.styl'
+
+.rangeScale
+    
+  .info-label.value
+    margin-top: 20px
+    
+    span
+      padding: 0 5px
+      
+      &.val-value
+        font-weight: bold
+        color: $scale-active-color
+
+      &.val-label
+        font-weight: normal
+
+  .rangeScale-track
+    &.monitor
+      position: relative
+      width: 100%
+      height: 10px
+      border-radius: 7px
+      background: $scale-bg-color
+      border-radius 6px
+
+  .rangeScale-mask
+    &.monitor 
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      border-radius: 7px
+      overflow: hidden
+
+  .rangeScale-target
+    position: absolute
+    bottom: -5px
+    z-index: 4
+    -webkit-transform: translate(-50%,0)
+    transform: translate(-50%,0)
+
+    path
+      fill: $primary-white
+
+  .rangeScale-active
+    background: $scale-active-color
+    position absolute
+    left: 0
+    bottom: 0
+    border-radius 6px 0 0 6px
+    
+    &.warning
+      background $primary-yellow
+    
+    &.danger
+      background $primary-red
+      &.max
+        border-radius 6px 6px 6px 6px
+
+  .rangeScale-scale
+    font-size 10px
+    color $scale-active-color
+
+    .scale-marks,
+    .scale-marks span,
+    .label-begin,
+    .label-middle,
+    .label-end
+      position: absolute
+      
+  /* vertical scale only */
+  &.vertical
+    position relative
+
+    &:before
+        content: ""
+        display: block
+        padding-top: 100%
+
+    .rangeScale-content
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+
+    .info-label.value
+      position: absolute
+      right: 45%
+      bottom: 0
+
+      span
+        display: block
+        text-align: right
+    
+    .rangeScale-track
+      &.monitor
+        position: relative
+        width: 10px
+        height: 90%
+        margin: 5% 40% 5% 60%
+        background: $scale-bg-color
+        border-radius 6px
+
+    .rangeScale-active
+      right 0
+      border-radius 0 0 6px 6px
+    
+    .rangeScale-target
+      transform: rotate(90deg)
+      margin-bottom: -5px
+      left: -5px
+
+    .rangeScale-scale
+      position: absolute
+      top: 0
+      left: 25px
+      height: 100%
+
+      .scale-marks
+        left: -13px
+        height: 100%
+
+        span
+          border-top: 1px solid $scale-active-color
+
+      .label-begin
+        bottom: -5px
+
+      .label-middle
+        bottom: "calc(50% - %s)" % 7px
+
+      .label-end
+        top: -5px
+
+  /* horizontal scale only */
+  &:not(.vertical)
+
+    .rangeScale-active
+      top: 0
+
+    .rangeScale-scale
+      position relative
+      top 20px
+
+      .scale-marks
+        top: -9px
+        width: 100%
+
+        span
+          border-left: 1px solid $scale-active-color
+
+      .label-begin
+        left -2px
+
+      .label-middle
+        left  "calc(50% - %s)" % 5px
+
+      .label-end
+        right -2px
+
+
+/* keep font-sizes responsive within the given grid */
+@media screen and (min-width: 0px)
+  .info-label.value
+    bottom: 20px
+
+    span
+      &.val-value
+        font-size: 6vw
+        line-height: 7vw
+
+      &.val-label
+        font-size: 4vw
+        line-height: 4vw
+
+@media screen and (min-width: 480px)
+  .info-label.value
+    bottom: 30px
+
+    span
+      &.val-value
+        font-size: 5vw
+        line-height: 6vw
+
+      &.val-label
+        font-size: 3.5vw
+        line-height: 3.5vw
+
+@media screen and (min-width: 768px)
+  .info-label.value
+    bottom: 20px
+
+    span
+      &.val-value
+        font-size: 2.5vw
+        line-height: 3vw
+
+      &.val-label
+        font-size: 1.75vw
+        line-height: 1.75vw
+
+@media screen and (min-width: 1200px)
+  .info-label.value
+    bottom: 20px
+
+    span
+      &.val-value
+        font-size: 1.5vw
+        line-height: 1.75vw
+
+      &.val-label
+        font-size: 1vw
+        line-height: 1vw

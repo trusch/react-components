@@ -1,0 +1,59 @@
+@import '../../variables/variables.styl'
+
+$radio-margin = 10px
+$radio-size   = 20px
+
+@keyframes ripple
+  0%, 100%
+    opacity: 0
+  1%
+    opacity: 1
+
+.radio-box
+  &.disabled
+    opacity: 0.5
+
+.radio 
+  &-input
+    display: none
+  
+  &-label 
+    position: relative
+    cursor: pointer
+    height: $radio-size
+    line-height: $radio-size
+    margin: $radio-margin
+    padding-left: $radio-size + $radio-margin
+    color: $font-color-text
+    
+    &:before, &:after 
+      position: absolute
+      content: ""
+      border-radius: 50%
+      transition: all .3s ease
+    
+    &:before 
+      top: 0
+      left: 0
+      width: $radio-size
+      height: $radio-size
+      background-color: $scale-active-color
+      box-shadow: inset 0 0 0 ($radio-margin + 4) $bg-color-default
+      border: 1px solid $font-color-active
+    
+    &:after 
+      top: 49%
+      left: $radio-margin - 1px
+      width: $radio-size * 3
+      height: $radio-size * 3
+      background-color: rgba(white, .3)
+      transform: translate(-50%, -50%) scale(0)
+  
+  &-input:checked + &-label 
+    &:before 
+      box-shadow: inset 0 0 0 4px $bg-color-default 
+    
+    &:after
+      transform: translate(-50%, -50%) scale(0.75)
+      animation: ripple 0.5s forwards
+

@@ -1,0 +1,59 @@
+@import '../../app/app.styl'
+
+g.rd3-linechart-xaxis,
+g.rd3-linechart-yaxis
+  path
+    stroke: $chart-color
+
+  text
+    fill: $chart-color
+
+  g.tick
+    line
+      stroke: $chart-color !important
+
+.chart-legend
+  margin $navigation-padding
+  clearfix()
+
+  ul
+    width 100%
+    clearfix()
+
+    li
+      display block
+      color white
+      width 50%
+      float left
+      margin-right 15px
+      padding-bottom 5px
+      min-width 125px
+
+      @media screen and (min-width: $screen-md-min)
+        width 25%
+
+      @media screen and (min-width: $screen-sm-min)
+        width 20%
+
+      .color-bullet
+        background-color pink
+        border-radius 5px
+        display inline-block
+        height $bullet-square
+        margin-right "calc(%s / 2)" % $navigation-padding
+        width $bullet-square
+
+        &.blue
+          background-color #25BDFF
+
+        &.red
+          background-color #ea1f74
+
+        &.gold
+          background-color #FFB100
+
+        &.crystal
+          background-color #7894AF
+
+        &.green
+          background-color #CCAD8F

@@ -8,14 +8,16 @@
 .navbar-default
   background-color $bg-color-default
   padding 0 15px
+  border-color $bg-color-default
 
 header
     margin $navigation-padding 0
     position relative
 
-    .logout-button
-      height auto
-      padding 0
+    a
+      position relative
+      top 4px
+
 
     .burger-menu
         border 0
@@ -123,16 +125,18 @@ header
 
 .logout-button
   background-color transparent
+  border 1px solid $primary-crystal
+  border-radius 0 0 $default-border-radius $default-border-radius
   float right
-  border 0
-  color $primary-crystal
-  height 42px
-  padding-right 0
-  text-align right
-  width 70px
-
-  &:hover
-    background-color transparent
+  border-top 0
+  color $primary-white
+  padding 5px 0
+  text-align center
+  width 90px
+  position relative
+  top -16px
+  font-size $button-font-size
+  margin-bottom 0
 
   &:active,
   &:focus
