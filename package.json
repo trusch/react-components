@@ -1,1 +1,38 @@
-{}
+{
+  "name": "teamSUDOsReactComponents",
+  "version": "1.0.0",
+  "description": "teamSUDOs-React-Component",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack"
+  ],
+  "author": "Andreas <me@aves.site> (http://github.com/thefirstave), Reinhard Meyer <reinhard.meyer@webvariants.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "url/to/issues"
+  },
+  "homepage": "url/to/homepage",
+  "devDependencies": {
+  },
+  "dependencies": {
+  },
+  "project": {
+    "directories": {
+    }
+  }
+}
